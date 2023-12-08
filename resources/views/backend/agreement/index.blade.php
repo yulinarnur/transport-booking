@@ -53,6 +53,7 @@
                       </tr>
                     </thead>
                     <tbody>
+                    
                       @foreach ($transportBookeds as $transportBooks)
                           <tr>
                             <td>{{ $transportBooks->transport->name }}</td>
@@ -62,17 +63,16 @@
                             <td>{{ $transportBooks->driver ? $transportBooks->driver->name : "-" }}</td>
                             <td>
                                 @if($transportBooks->status == 'Menunggu disetujui')
-                                    <span class="badge bg-warning">{{ $transportBooks->status }}</span>
+                                    <span class="badge bg-warning">{{ $transportBooks->status }} - {{ $transportBooks->approver->name }}</span>
                                 @elseif($transportBooks->status == 'Disetujui')
-                                    <span class="badge bg-success">{{ $transportBooks->status }}</span>
+                                    <span class="badge bg-success">{{ $transportBooks->status }} - {{ $transportBooks->approver->name }}</span>
                                 @elseif($transportBooks->status == 'Ditolak')
-                                    <span class="badge bg-danger">{{ $transportBooks->status }}</span>
+                                    <span class="badge bg-danger">{{ $transportBooks->status }} - {{ $transportBooks->approver->name }}</span>
                                 @else
-                                    {{ $transportBooks->status }}
+                                    {{ $transportBooks->status }} - {{ $transportBooks->approver->name }}
                                 @endif
-                                - {{ $transportBooks->approver->name }}
                             </td>
-                             
+                            
                             <td>
                                 <a href="{{ route('agreement.edit', $transportBooks->id) }}" class="btn btn-primary">
                                     <i class="fas fa-edit"></i> 

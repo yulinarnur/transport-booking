@@ -10,8 +10,10 @@ class UserData extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
         $user = [
             [
@@ -21,8 +23,8 @@ class UserData extends Seeder
                 'level' => 1
             ],
             [
-                'name' => 'Supervisor',
-                'email' => 'supervior@gmail.com',
+                'name' => 'Supervisor 2',
+                'email' => 'supervisor2@gmail.com',
                 'password' => bcrypt(12345678),
                 'level' => 2
             ],

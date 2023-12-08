@@ -67,6 +67,7 @@
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
           <span class="hide-menu">Data Pemesanan</span>
         </li>
+        @if($user && $user->level == 1)
         <li class="sidebar-item">
           <a class="sidebar-link" href="{{ route('backend.transportBooked') }}" aria-expanded="false">
             <span>
@@ -75,7 +76,8 @@
             <span class="hide-menu">Pesan Kendaraan</span>
           </a>
         </li>
-        @if($user && $user->level == 2)
+        @endif
+        @if($user && $user->level >= 2)
         <li class="sidebar-item">
           <a class="sidebar-link" href="{{ route('backend.agreement') }}" aria-expanded="false">
             <span>
@@ -85,26 +87,6 @@
           </a>
         </li>
         @endif
-        <li class="nav-small-cap">
-          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-          <span class="hide-menu">EXTRA</span>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
-            <span>
-              <i class="ti ti-mood-happy"></i>
-            </span>
-            <span class="hide-menu">Icons</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
-            <span>
-              <i class="ti ti-aperture"></i>
-            </span>
-            <span class="hide-menu">Sample Page</span>
-          </a>
-        </li>
       </ul>
       
     </nav>
