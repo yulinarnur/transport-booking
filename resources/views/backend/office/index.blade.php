@@ -38,7 +38,7 @@
                 @endif
                 <div class="card-header d-flex justify-content-between align-items-center">
                   <span><i class="bi bi-house-door"></i> Daftar Data Kantor</span>
-                    <a class="btn btn-primary" href="{{ route('backend.officeAdd') }}"><i class="bi bi-plus"></i> Add</a>
+                    <a class="btn btn-sm btn-primary" href="{{ route('backend.officeAdd') }}"><i class="bi bi-plus"></i> Add Office</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

@@ -36,8 +36,8 @@
             </div>
             @endif
             <div class="card-header d-flex justify-content-between align-items-center">
-              Simple Datatable
-              <a class="btn btn-primary" href="{{ route('backend.transportAddBooked') }}">Add</a>
+                <span><i class="bi bi-truck"></i> Daftar Data Pemesanan Kendaraan</span>
+              <a class="btn btn-sm btn-primary" href="{{ route('backend.transportAddBooked') }}"><i class="fas fa-plus me-2"></i> Add Transportion Booked</a>
             </div>
               <div class="card-body">
                   <table class="table table-striped" id="table1">
@@ -72,14 +72,14 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('transport_booked.edit', $transportBooks->id) }}" class="btn btn-primary">
-                                    <i class="fas fa-edit"></i> 
+                                <a href="{{ route('transport_booked.edit', $transportBooks->id) }}" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <form action="{{ route('transport_booked.destroy', $transportBooks->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                                        <i class="fas fa-trash-alt"></i>
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                        <i class="fas fa-trash-alt"></i> Delete
                                     </button>
                                 </form>
                             </td>

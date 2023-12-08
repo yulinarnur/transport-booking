@@ -33,7 +33,7 @@
                 @endif
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span><i class="bi bi-table"></i> Daftar Data Region</span>
-                    <a class="btn btn-primary" href="{{ route('backend.regionAdd') }}"><i class="bi bi-plus"></i> Add</a>
+                    <a class="btn btn-sm btn-primary" href="{{ route('backend.regionAdd') }}"><i class="bi bi-plus"></i> Add Region</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

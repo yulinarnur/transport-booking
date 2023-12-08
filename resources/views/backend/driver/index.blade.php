@@ -37,7 +37,7 @@
                 @endif
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span><i class="fas fa-table me-2"></i>Daftar Data Driver</span>
-                    <a class="btn btn-primary" href="{{ route('backend.driverAdd') }}">
+                    <a class="btn btn-sm btn-primary" href="{{ route('backend.driverAdd') }}">
                         <i class="fas fa-plus me-2"></i> Add Driver
                     </a>
                 </div>

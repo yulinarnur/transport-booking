@@ -36,8 +36,8 @@
             </div>
             @endif
             <div class="card-header d-flex justify-content-between align-items-center">
-              Simple Datatable
-              <a class="btn btn-primary" href="{{ route('backend.transportAddBooked') }}">Add</a>
+                <span><i class="bi bi-truck"></i> Daftar Data Persetujuan Kendaraan</span>
+              <a class="btn btn-sm btn-primary" href="{{ route('backend.transportAddBooked') }}"><i class="fas fa-plus me-2"></i> Add Booking</a>
             </div>
               <div class="card-body">
                   <table class="table table-striped" id="table1">
@@ -74,7 +74,7 @@
                             </td>
                             
                             <td>
-                                <a href="{{ route('agreement.edit', $transportBooks->id) }}" class="btn btn-primary">
+                                <a href="{{ route('agreement.edit', $transportBooks->id) }}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-edit"></i> 
                                 </a>
                                 {{-- <form action="{{ route('transport_booked.destroy', $transportBooks->id) }}" method="POST" style="display:inline;">

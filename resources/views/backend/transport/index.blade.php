@@ -38,7 +38,7 @@
                 @endif
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span><i class="bi bi-table"></i> Daftar Data Kendaraan</span>
-                    <a class="btn btn-primary" href="{{ route('backend.transportAdd') }}">
+                    <a class="btn btn-sm btn-primary" href="{{ route('backend.transportAdd') }}">
                         <i class="bi bi-plus"></i> Add Transport
                     </a>
                 </div>
