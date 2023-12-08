@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\DriversController;
-use App\Http\Controllers\RegionController;;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\TransportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserLogin;
@@ -68,6 +68,14 @@ Route::post('/driver', [DriversController::class, 'store'])->name('driver.store'
 Route::get('/driver/{id}/edit', [DriversController::class, 'edit'])->name('driver.edit');
 Route::put('/driver/{id}', [DriversController::class, 'update'])->name('driver.update');
 Route::delete('/driver/{id}', [DriversController::class, 'destroy'])->name('driver.destroy');
+
+// transport
+Route::get('data_transport/index',[TransportController::class, 'index'])->middleware('auth')->name('backend.transport');
+Route::get('/addTransport',[TransportController::class, 'addTransport'])->middleware('auth')->name('backend.transportAdd');
+Route::post('/transport', [TransportController::class, 'store'])->name('transport.store');
+Route::get('/transport/{id}/edit', [TransportController::class, 'edit'])->name('transport.edit');
+Route::put('/transport/{id}', [TransportController::class, 'update'])->name('transport.update');
+Route::delete('/transport/{id}', [TransportController::class, 'destroy'])->name('transport.destroy');
 
 // transport
 Route::get('data_transport/index',[TransportController::class, 'index'])->middleware('auth')->name('backend.transport');

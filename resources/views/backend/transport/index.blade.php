@@ -39,7 +39,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span><i class="bi bi-table"></i> Daftar Data Kendaraan</span>
                     <a class="btn btn-primary" href="{{ route('backend.transportAdd') }}">
-                        <i class="bi bi-plus"></i> Add
+                        <i class="bi bi-plus"></i> Add Transport
                     </a>
                 </div>
                 <div class="card-body">
@@ -74,7 +74,7 @@
                                     </td>
                                     <td>
                                         @if($transport->image)
-                                            <img src="{{ asset('storage/' . $transport->image) }}" alt="Transport Image" width="100">
+                                            <img src="{{ asset($transport->image) }}" alt="Transport Image" width="100">
                                         @else
                                             <i class="bi bi-image"></i>
                                         @endif

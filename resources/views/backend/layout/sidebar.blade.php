@@ -72,7 +72,7 @@
             <span>
               <i class="ti ti-login"></i>
             </span>
-            <span class="hide-menu">Login</span>
+            <span class="hide-menu">Pesan Kendaraan</span>
           </a>
         </li>
         <li class="sidebar-item">
