@@ -7,6 +7,7 @@ use App\Http\Controllers\DriversController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\TransportBookedController;
+use App\Http\Controllers\AgreementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserLogin;
 
@@ -85,3 +86,10 @@ Route::post('/transport_booked', [TransportBookedController::class, 'store'])->n
 Route::get('/transport_booked/{id}/edit', [TransportBookedController::class, 'edit'])->name('transport_booked.edit');
 Route::put('/transport_booked/{id}', [TransportBookedController::class, 'update'])->name('transport_booked.update');
 Route::delete('/transport_booked/{id}', [TransportBookedController::class, 'destroy'])->name('transport_booked.destroy');
+
+// agreement supervisor
+Route::get('agreement/index',[AgreementController::class, 'index'])->middleware('auth')->name('backend.agreement');
+Route::get('/agreement/{id}/edit', [AgreementController::class, 'edit'])->name('agreement.edit');
+// Route::put('/agreement/{id}', [AgreementController::class, 'update'])->name('agreement.update');
+Route::post('/agreement/approve/{id}', [AgreementController::class, 'approve'])->name('agreement.approve');
+Route::post('/agreement/reject/{id}', [AgreementController::class, 'reject'])->name('agreement.reject');

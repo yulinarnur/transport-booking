@@ -75,14 +75,16 @@
             <span class="hide-menu">Pesan Kendaraan</span>
           </a>
         </li>
+        @if($user && $user->level == 2)
         <li class="sidebar-item">
-          <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+          <a class="sidebar-link" href="{{ route('backend.agreement') }}" aria-expanded="false">
             <span>
               <i class="ti ti-user-plus"></i>
             </span>
-            <span class="hide-menu">Register</span>
+            <span class="hide-menu">Persetujuan</span>
           </a>
         </li>
+        @endif
         <li class="nav-small-cap">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
           <span class="hide-menu">EXTRA</span>
