@@ -42,5 +42,12 @@ class TransportBookedController extends Controller
 
         return redirect()->route('backend.transportBooked')->with('success', "Data pemesanan kendaraan berhasil ditambahkan!");
     }
+
+    public function destroy($id){
+        $transportBooked = TransportBooked::findOrFail($id);
+        $transportBooked->delete();
+
+        return redirect()->route('backend.transportBooked')->with('warning', 'Data pemesanan kendaraan telah berhasil dihapus!'); 
+    }
     
 }
