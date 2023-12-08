@@ -14,8 +14,8 @@
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                   <img src="{{ asset('backend/assets/images/logos/dark-logo.svg')}}" width="180" alt="">
                 </a>
-                <p class="text-center">Monitoring Transportasi</p>
-                <form method="POST" action="{{ route('login') }}">
+                <p class="text-center">Transportasi Booking</p>
+                <form method="POST" action="{{ route('login.proses') }}">
                     @csrf
                     
                 {{-- email inpur --}}
