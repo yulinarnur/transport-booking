@@ -55,7 +55,7 @@
                                 @foreach ($office as $office_item)
                                     <tr>
                                         <td>{{ $office_item->office_type }}</td>
-                                        <td>{{ $office_item->region ? $office_item->region->city_name : 'N/A' }}</td>
+                                        <td>{{ $office_item->region ? $office_item->region->city_name : '-' }}</td>
                                         <td>{{ $office_item->address }}</td>
                                         <td>
                                             <a href="{{ route('office.edit', $office_item->id) }}" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil"></i> Edit</a>

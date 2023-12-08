@@ -86,6 +86,7 @@
                                             <form action="{{ route('driver.destroy', $driver->id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
+                                                
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                                     <i class="fas fa-trash-alt me-1"></i> 
                                                 </button>
