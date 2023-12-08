@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Office extends Model
 {
     use HasFactory;
+
     protected $table = 'office';
+
+    protected $fillable = ['office_type', 'address', 'region_id'];
 
     public function region()
     {

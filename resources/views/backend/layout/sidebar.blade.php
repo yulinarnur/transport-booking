@@ -51,7 +51,7 @@
             <span>
               <i class="ti ti-cards"></i>
             </span>
-            <span class="hide-menu">Card</span>
+            <span class="hide-menu">Data Driver</span>
           </a>
         </li>
         <li class="sidebar-item">
@@ -59,13 +59,13 @@
             <span>
               <i class="ti ti-file-description"></i>
             </span>
-            <span class="hide-menu">Forms</span>
+            <span class="hide-menu">Data Kendaraan</span>
           </a>
         </li>
         
         <li class="nav-small-cap">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-          <span class="hide-menu">AUTH</span>
+          <span class="hide-menu">Data Pemesanan</span>
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">

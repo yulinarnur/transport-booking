@@ -55,3 +55,6 @@ Route::delete('/region/{id}', [RegionController::class, 'destroy'])->name('regio
 Route::get('data_office/index',[OfficeController::class, 'index'])->middleware('auth')->name('backend.office');
 Route::get('/addOffice',[OfficeController::class, 'addOffice'])->middleware('auth')->name('backend.officeAdd');
 Route::post('/office', [OfficeController::class, 'store'])->name('office.store');
+Route::get('/office/{id}/edit', [OfficeController::class, 'edit'])->name('office.edit');
+Route::post('/office/{id}', [OfficeController::class, 'update'])->name('office.update');
+Route::delete('/office/{id}', [OfficeController::class, 'destroy'])->name('office.destroy');

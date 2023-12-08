@@ -54,11 +54,13 @@
                                         <td>{{ $office_item->region ? $office_item->region->city_name : 'N/A' }}</td>
                                         <td>{{ $office_item->address }}</td>
                                         <td>
-                                            <a href="{{ route('region.edit', $office_item->id) }}" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil"></i></a>
-                                            <form action="{{ route('region.destroy', $office_item->id) }}" method="POST" style="display:inline;">
+                                            <a href="{{ route('office.edit', $office_item->id) }}" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil"></i> Edit</a>
+                                            <form action="{{ route('office.destroy', $office_item->id) }}" method="POST"
+                                                style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="bi bi-trash"></i></button>
+                                                <button type="submit" class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="bi bi-trash"></i> Delete</button>
                                             </form>
                                         </td>
                                     </tr>
