@@ -65,5 +65,5 @@ Route::get('data_driver/index',[DriversController::class, 'index'])->middleware(
 Route::get('/addDriver',[DriversController::class, 'addDriver'])->middleware('auth')->name('backend.driverAdd');
 Route::post('/driver', [DriversController::class, 'store'])->name('driver.store');
 Route::get('/driver/{id}/edit', [DriversController::class, 'edit'])->name('driver.edit');
-Route::post('/driver/{id}', [DriversController::class, 'update'])->name('driver.update');
+Route::put('/driver/{id}', [DriversController::class, 'update'])->name('driver.update');
 Route::delete('/driver/{id}', [DriversController::class, 'destroy'])->name('driver.destroy');
