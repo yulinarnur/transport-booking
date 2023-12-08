@@ -41,6 +41,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
+
+    // menampilkan level > 1 - supervisor dan manajer untuk approval
+    public static function approvers() {
+        return self::where('level', '=', 2)->get();
+    }
+
+    // konsisi auth dengan level yang sedang login, kalau level > 1 bisa melakukan banyak persetujuan
+    public function isApprover() {
+        return $this->level > 1;
+    }
+
 }

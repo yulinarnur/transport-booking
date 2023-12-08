@@ -44,4 +44,8 @@ class Driver extends Model
         'birth_date',
         'work_start_date',
     ];
+
+    public function transportBookings() {
+        return $this->hasMany(TransportBooked::class, 'driver_id');
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\TransportController;
+use App\Http\Controllers\TransportBookedController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserLogin;
 
@@ -77,10 +78,10 @@ Route::get('/transport/{id}/edit', [TransportController::class, 'edit'])->name('
 Route::put('/transport/{id}', [TransportController::class, 'update'])->name('transport.update');
 Route::delete('/transport/{id}', [TransportController::class, 'destroy'])->name('transport.destroy');
 
-// transport
-Route::get('data_transport/index',[TransportController::class, 'index'])->middleware('auth')->name('backend.transport');
-Route::get('/addTransport',[TransportController::class, 'addTransport'])->middleware('auth')->name('backend.transportAdd');
-Route::post('/transport', [TransportController::class, 'store'])->name('transport.store');
-Route::get('/transport/{id}/edit', [TransportController::class, 'edit'])->name('transport.edit');
-Route::put('/transport/{id}', [TransportController::class, 'update'])->name('transport.update');
-Route::delete('/transport/{id}', [TransportController::class, 'destroy'])->name('transport.destroy');
+// transport_booked
+Route::get('transport_booked/index',[TransportBookedController::class, 'index'])->middleware('auth')->name('backend.transportBooked');
+Route::get('/addTransportBooked',[TransportBookedController::class, 'addTransportBooked'])->middleware('auth')->name('backend.transportAddBooked');
+Route::post('/transport_booked', [TransportBookedController::class, 'store'])->name('transport_booked.store');
+Route::get('/transport_booked/{id}/edit', [TransportBookedController::class, 'edit'])->name('transport_booked.edit');
+Route::put('/transport_booked/{id}', [TransportBookedController::class, 'update'])->name('transport_booked.update');
+Route::delete('/transport_booked/{id}', [TransportBookedController::class, 'destroy'])->name('transport_booked.destroy');
