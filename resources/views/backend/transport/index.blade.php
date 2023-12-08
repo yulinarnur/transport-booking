@@ -74,7 +74,7 @@
                                     </td>
                                     <td>
                                         @if($transport->image)
-                                            <img src="{{ asset($transport->image) }}" alt="Transport Image" width="100">
+                                            <img src="{{ asset('storage/' . $transport->image) }}" alt="Transport Image" width="100">
                                         @else
                                             <i class="bi bi-image"></i>
                                         @endif
