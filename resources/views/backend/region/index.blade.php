@@ -26,8 +26,13 @@
       </div>
       <section class="section">
           <div class="card">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="card-header d-flex justify-content-between align-items-center">
-              Data Region
+              Simple Datatable
               <a class="btn btn-primary" href="{{ route('backend.regionAdd') }}">Add</a>
             </div>
               <div class="card-body">
@@ -47,11 +52,11 @@
                             <td>{{ $region->regency }}</td>
                             <td>{{ $region->province }}</td>
                             <td>
-                              <a href="" class="btn btn-primary">Edit</a>
-                              <form action="" method="POST" style="display:inline;">
+                              <a href="{{ route('region.edit', $region->id) }}" class="btn btn-primary">Edit</a>
+                              <form action="{{ route('region.destroy', $region->id) }}" method="POST" style="display:inline;">
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                  <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
                               </form>
                           </td>
                           </tr>
@@ -63,7 +68,5 @@
 
       </section>
   </div>
-
-  
 </div>
 @endsection

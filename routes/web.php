@@ -46,3 +46,6 @@ Route::get('/backend/dashboard',[DashboardController::class, 'index'])->middlewa
 Route::get('/index',[RegionController::class, 'index'])->middleware('auth')->name('backend.region');
 Route::get('/addRegion',[RegionController::class, 'addRegion'])->middleware('auth')->name('backend.regionAdd');
 Route::post('/region', [RegionController::class, 'store'])->name('region.store');
+Route::get('/region/{id}/edit', [RegionController::class, 'edit'])->name('region.edit');
+Route::post('/region/{id}', [RegionController::class, 'update'])->name('region.update');
+Route::delete('/region/{id}', [RegionController::class, 'destroy'])->name('region.destroy');
