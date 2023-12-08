@@ -39,7 +39,7 @@
         </li>
         {{-- @endif --}}
         <li class="sidebar-item">
-          <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+          <a class="sidebar-link" href="{{ route('backend.office') }}" aria-expanded="false">
             <span>
               <i class="ti ti-alert-circle"></i>
             </span>

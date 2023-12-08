@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\RegionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserLogin;
@@ -49,3 +50,8 @@ Route::post('/region', [RegionController::class, 'store'])->name('region.store')
 Route::get('/region/{id}/edit', [RegionController::class, 'edit'])->name('region.edit');
 Route::post('/region/{id}', [RegionController::class, 'update'])->name('region.update');
 Route::delete('/region/{id}', [RegionController::class, 'destroy'])->name('region.destroy');
+
+// data office
+Route::get('data_office/index',[OfficeController::class, 'index'])->middleware('auth')->name('backend.office');
+Route::get('/addOffice',[OfficeController::class, 'addOffice'])->middleware('auth')->name('backend.officeAdd');
+Route::post('/office', [OfficeController::class, 'store'])->name('office.store');
