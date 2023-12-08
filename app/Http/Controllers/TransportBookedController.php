@@ -43,6 +43,34 @@ class TransportBookedController extends Controller
         return redirect()->route('backend.transportBooked')->with('success', "Data pemesanan kendaraan berhasil ditambahkan!");
     }
 
+    public function edit($id){
+        $user = Auth::user();
+        $transportBooked = TransportBooked::findOrFail($id);
+        return view('backend.transportBooked.edit', compact('user','transportBooked'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $agreement = TransportBooked::findOrFail($id);
+        
+        $request->validate([
+            'transport_id' => 'required|integer',
+            'booked_date' => 'required|date',
+            'status' => 'required|string',
+            'driver_id' => 'required|integer',
+            'approver_id' => 'required|integer'
+        ]);
+
+        $agreement->transport_id = $request->input('transport_id');
+        $agreement->booked_date = $request->input('booked_date');
+        $agreement->status = $request->input('status');
+        $agreement->driver_id = $request->input('driver_id');
+        $agreement->approver_id = $request->input('approver_id');
+
+        $agreement->save();
+        return redirect()->route('backend.transportBooked')->with('success', "Data pemesanan kendaraan berhasil diubah!");
+    }   
+
     public function destroy($id){
         $transportBooked = TransportBooked::findOrFail($id);
         $transportBooked->delete();
