@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\RegionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserLogin;
 
@@ -16,26 +17,15 @@ use App\Http\Middleware\CheckUserLogin;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Auth::routes();
-
-Route::get('/',[DashboardController::class, 'index'])->middleware('auth');
-Route::get('/backend/dashboard',[DashboardController::class, 'index'])->middleware('auth');
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-// Route::get('/backend/dashboard', [App\Http\Controllers\Backend\DashboardController::class, 'index'])->name('backend');
-
 // login logout
 Route::post('login/proses', [App\Http\Controllers\Auth\LoginController::class, 'proses'])->name('login.proses');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 Route::controller(LoginController::class)->group(function(){
     Route::get('login', 'index')->name('login');
 });
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// register
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
 Route::group(['middleware' => ['auth']],function(){
     Route::group(['middleware' => ['cekUserLogin:1']],function(){
@@ -46,3 +36,11 @@ Route::group(['middleware' => ['auth']],function(){
     //     Route::resource('backend/dashboard', DashboardController::class);
     // });
 });
+
+
+// dashboard
+Route::get('/',[DashboardController::class, 'index'])->middleware('auth');
+Route::get('/backend/dashboard',[DashboardController::class, 'index'])->middleware('auth')->name('backend.dashboard');
+
+// data region
+Route::get('/index',[RegionController::class, 'index'])->middleware('auth')->name('backend.region');
