@@ -27,8 +27,8 @@
       <section class="section">
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-              Simple Datatable
-              <button class="btn btn-primary">Add</button>
+              Data Region
+              <a class="btn btn-primary" href="{{ route('backend.regionAdd') }}">Add</a>
             </div>
               <div class="card-body">
                   <table class="table table-striped" id="table1">
@@ -64,16 +64,6 @@
       </section>
   </div>
 
-  <footer>
-      <div class="footer clearfix mb-0 text-muted">
-          <div class="float-start">
-              <p>2021 &copy; Mazer</p>
-          </div>
-          <div class="float-end">
-              <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                      href="http://ahmadsaugi.com">A. Saugi</a></p>
-          </div>
-      </div>
-  </footer>
+  
 </div>
 @endsection

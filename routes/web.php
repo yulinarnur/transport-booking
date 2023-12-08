@@ -44,3 +44,5 @@ Route::get('/backend/dashboard',[DashboardController::class, 'index'])->middlewa
 
 // data region
 Route::get('/index',[RegionController::class, 'index'])->middleware('auth')->name('backend.region');
+Route::get('/addRegion',[RegionController::class, 'addRegion'])->middleware('auth')->name('backend.regionAdd');
+Route::post('/region', [RegionController::class, 'store'])->name('region.store');

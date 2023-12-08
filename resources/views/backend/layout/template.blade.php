@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="{{ asset('backend/assets/vendors/bootstrap-icons/bootstrap-icons.css')}}">
   <link rel="stylesheet" href="{{ asset('backend/assets/css/app.css')}}">
   <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.svg')}}" type="image/x-icon">
+
+  {{-- form layout --}}
+  
 </head>
 
 <body>
@@ -51,6 +54,8 @@
   </script>
 
   <script src="{{ asset('backend/assets/js/main.js')}}"></script>
+
+  {{-- form layout --}}
 </body>
 
 </html>
