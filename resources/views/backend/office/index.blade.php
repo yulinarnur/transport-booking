@@ -31,6 +31,10 @@
                     <div class="alert alert-success">
                         {{ session('success') }}
                     </div>
+                @elseif (session('warning'))
+                    <div class="alert alert-warning">
+                        {{ session('warning') }}
+                    </div>
                 @endif
                 <div class="card-header d-flex justify-content-between align-items-center">
                   <span><i class="bi bi-house-door"></i> Daftar Data Kantor</span>

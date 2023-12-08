@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\OfficeController;
+use App\Http\Controllers\DriversController;
 use App\Http\Controllers\RegionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserLogin;
@@ -58,3 +59,11 @@ Route::post('/office', [OfficeController::class, 'store'])->name('office.store')
 Route::get('/office/{id}/edit', [OfficeController::class, 'edit'])->name('office.edit');
 Route::post('/office/{id}', [OfficeController::class, 'update'])->name('office.update');
 Route::delete('/office/{id}', [OfficeController::class, 'destroy'])->name('office.destroy');
+
+// driver
+Route::get('data_driver/index',[DriversController::class, 'index'])->middleware('auth')->name('backend.driver');
+Route::get('/addDriver',[DriversController::class, 'addDriver'])->middleware('auth')->name('backend.driverAdd');
+Route::post('/driver', [DriversController::class, 'store'])->name('driver.store');
+Route::get('/driver/{id}/edit', [DriversController::class, 'edit'])->name('driver.edit');
+Route::post('/driver/{id}', [DriversController::class, 'update'])->name('driver.update');
+Route::delete('/driver/{id}', [DriversController::class, 'destroy'])->name('driver.destroy');
